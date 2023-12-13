@@ -1,12 +1,15 @@
 <script setup>
 import { ref } from 'vue'
+import Immer from './components/immer/index.vue'
 const msg = ref('Hello world')
 
 </script>
 
 <template>
   <div>
-    {{ msg }}
+    <!-- {{ msg }} -->
+
+    <immer></immer>
   </div>
 </template>
 

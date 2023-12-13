@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "@vue/test-utils": "^2.4.3",
+    "immer": "^10.0.3",
     "vue": "^3.3.11"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
     "jsdom": "^23.0.1",
+    "sass": "^1.69.5",
     "vite": "^5.0.8",
     "vitest": "^1.0.4"
   }
