@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
-import "./js/higherOrderFunction";
+import "./js/copy";
 
 async function bootstrapWorker() {
   const { worker } = await import("./mocks");
