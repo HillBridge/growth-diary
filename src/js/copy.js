@@ -22,3 +22,17 @@ res2.nums[0].count = 2;
 res2.age = 14;
 
 // console.log("改变了值", obj);
+
+// 深拷贝对象
+const obj2 = {
+  name: "foo",
+  age: 12,
+  nums: [{ count: 1 }],
+};
+function copy3(obj) {
+  return JSON.parse(JSON.stringify(obj2));
+}
+
+const res3 = copy3(obj);
+res3.nums[0].count = 3333;
+console.log("改变了值22", obj2);
