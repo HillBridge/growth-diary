@@ -5,6 +5,10 @@
   <div>
     <router-view />
 
+    <router-link :to="{ name: 'home' }">
+      Home
+    </router-link>
+
     <router-link :to="{ name: 'simple-list' }">
       Simple array
     </router-link>

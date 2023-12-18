@@ -36,6 +36,7 @@ function toggleItem(index) {
 }
 
 // shallowRef 大型不可变数据结构的性能优化
+// 仅仅对最外层数据是响应式的, 深层的数据不是响应式的, 如果更改只能通过替换的方式进行更改
 const state = shallowRef({
     name: 'bridge',
     lover: [
@@ -44,11 +45,20 @@ const state = shallowRef({
     ]
 })
 
+
+const shallowArray = shallowRef([
+    { name: 'aaa' },
+    { name: 'bbb' }
+])
+// console.log('shallowArray---改变前', shallowArray.value)
+shallowArray.value[1].name = '1111'
+// console.log('shallowArray---改变后', shallowArray.value)
+
 function changeName() {
     state.value = {
         name: 'qiao',
         lover: [
-            { label: '篮球' },
+            { label: '篮球---change' },
             { label: '足球' }
         ]
     }

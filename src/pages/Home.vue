@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, shallowRef } from 'vue'
 import Immer from '../components/immer/index.vue'
 const msg = ref('Hello world')
 
@@ -8,7 +8,6 @@ const msg = ref('Hello world')
 <template>
     <div>
         {{ msg }}
-
         <immer></immer>
     </div>
 </template>
