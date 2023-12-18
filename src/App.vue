@@ -1,15 +1,13 @@
 <script setup>
-import { ref } from 'vue'
-import Immer from './components/immer/index.vue'
-const msg = ref('Hello world')
-
 </script>
 
 <template>
   <div>
-    <!-- {{ msg }} -->
+    <router-view />
 
-    <immer></immer>
+    <router-link :to="{ name: 'simple-list' }">
+      Simple array
+    </router-link>
   </div>
 </template>
 
