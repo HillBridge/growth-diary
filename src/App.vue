@@ -8,6 +8,10 @@
     <router-link :to="{ name: 'simple-list' }">
       Simple array
     </router-link>
+
+    <router-link :to="{ name: 'test-chats' }">
+      Simple array
+    </router-link>
   </div>
 </template>
 
