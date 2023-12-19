@@ -35,4 +35,4 @@ function copy3(obj) {
 
 const res3 = copy3(obj);
 res3.nums[0].count = 3333;
-console.log("改变了值22", obj2);
+//console.log("改变了值22", obj2);

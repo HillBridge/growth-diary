@@ -1,8 +1,9 @@
 <template>
     <div>
         <h2>不可变数据结构 ---- immer</h2>
-        <div @click="changeName">{{ state.name }}</div>
-        <div v-for="(item, index) in state.lover" :key="index" @click="changeLabelName(index)">{{ item.label }}</div>
+        <div @click="changeName">{{ shallowObject.name }}</div>
+        <div v-for="(item, index) in shallowObject.lover" :key="index" @click="changeLabelName(index)">{{ item.label }}
+        </div>
         <div>==========================</div>
         <ul>
             <li v-for="({ title, done }, index) in items" :class="{ done }" @click="toggleItem(index)">
@@ -37,7 +38,7 @@ function toggleItem(index) {
 
 // shallowRef 大型不可变数据结构的性能优化
 // 仅仅对最外层数据是响应式的, 深层的数据不是响应式的, 如果更改只能通过替换的方式进行更改
-const state = shallowRef({
+const shallowObject = shallowRef({
     name: 'bridge',
     lover: [
         { label: '篮球' },
@@ -55,17 +56,20 @@ shallowArray.value[1].name = '1111'
 // console.log('shallowArray---改变后', shallowArray.value)
 
 function changeName() {
-    state.value = {
-        name: 'qiao',
-        lover: [
-            { label: '篮球---change' },
-            { label: '足球' }
-        ]
-    }
+    // shadowRef 包装的数据只有.value下是响应式的数据, 只能整体替换
+    shallowObject.value.name = 'cc'
+    console.log('shallowObject', shallowObject.value)
+    // shallowObject.value = {
+    //     name: 'qiao',
+    //     lover: [
+    //         { label: '篮球---change' },
+    //         { label: '足球' }
+    //     ]
+    // }
 }
 
 function changeLabelName(idx) {
-    state.value.lover[idx].label = '游泳'
+    shallowObject.value.lover[idx].label = '游泳'
 }
 
 
